@@ -7,10 +7,6 @@ services:
     ports:
       - '80:80'
     hostname: "${APP_DOMAIN}"
-    networks:
-      shaamnet:
-        aliases:
-          - "${APP_DOMAIN}"
     volumes:
       - '.:/var/www/shamaal'
       - './docker/logs/nginx:/var/log/nginx'
@@ -44,12 +40,4 @@ services:
     restart: always
     volumes:
       - './:/var/www/shamaal'
-    networks:
-      - shaamnet
 
-
-volumes:
-  db_data:
-networks:
-  shaamnet:
-    driver: bridge
