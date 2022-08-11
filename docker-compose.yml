@@ -33,13 +33,12 @@ services:
       MYSQL_ROOT_PASSWORD: ${DB_PASSWORD_GAME}
       MYSQL_DATABASE: ${DB_DATABASE_GAME}
     volumes:
-      - './docker/mysql/main.cnf:/etc/mysql/conf.d/main.cnf'
       - 'db_data:/var/lib/mysql'
 
 
   php5-fpm:
     build:
-      context: './docker/php5.3'
+      context: './docker/php5,3'
       args:
         environment: ${APP_ENV}
     restart: always
